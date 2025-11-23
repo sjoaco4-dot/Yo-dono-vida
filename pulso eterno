@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulso eterno - chile 💖</title>
+    <!-- Fuentes: Quicksand (redonda/amable) y Open Sans (lectura) -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #e84393; /* Rosa fuerte */
+            --primary-light: #fd79a8; /* Rosa chicle */
+            --bg-pink: #fff0f5; /* Lavanda rosácea muy clara */
+            --text-dark: #2d3436;
+            --shadow-sticker: 4px 4px 0px rgba(232, 67, 147, 0.2); /* Sombra dura tipo sticker */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--primary);
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(232, 67, 147, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-pink {
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(232, 67, 147, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .btn-pink:hover {
+            transform: translateY(-3px);
+            background: var(--primary-light);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 30px;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            z-index: 10;
+            border: 4px solid white;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        /* Decoración flotante */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.4;
+            animation: float 6s infinite ease-in-out;
+            font-size: 5rem;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* --- SECCIONES GENERALES --- */
+        section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- TARJETAS TIPO STICKER (INFO DETALLADA) --- */
+        .sticker-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow-sticker);
+            border: 2px solid var(--primary-light);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sticker-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .sticker-icon-top {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: var(--bg-pink);
+            padding: 15px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Grid para Muerte Encefálica */
+        .brain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Comparación Coma vs Muerte */
+        .comparison-box {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 3px dashed var(--primary-light);
+        }
+
+        .comparison-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 15px;
+        }
+        
+        .comp-coma { background: #fff3cd; color: #856404; }
+        .comp-death { background: #f8d7da; color: #721c24; }
+
+        /* --- IMPACTO --- */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .big-number {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-shadow: 2px 2px 0px #ffeaa7;
+        }
+
+        /* Stickers de Órganos */
+        .organ-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 2rem;
+        }
+
+        .mini-sticker {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 0px rgba(232, 67, 147, 0.2);
+            font-weight: bold;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid white;
+            transition: transform 0.2s;
+        }
+        
+        .mini-sticker:hover { transform: scale(1.1); }
+
+        /* --- ACORDEÓN (MITOS) --- */
+        .myth-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            border: 1px solid var(--bg-pink);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .myth-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .myth-header:hover {
+            background-color: var(--bg-pink);
+            border-radius: 15px;
+        }
+
+        .myth-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            background: #fff;
+            padding: 0 1.5rem;
+        }
+        
+        .myth-content p { padding: 1.5rem 0; color: var(--primary); }
+
+        /* --- ENTIDADES --- */
+        .entity-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .entity-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 25px;
+            width: 300px;
+            text-align: center;
+            box-shadow: var(--shadow-sticker);
+            border: 2px solid #eee;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .big-number { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="logo">
+            <i class="fas fa-heart" style="color: var(--primary);"></i> 
+            <span style="color: #2d3436; margin-left: 5px;">YoDono</span><span style="color: var(--primary);">Vida</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#muerte-encefalica">Muerte Encefálica</a></li>
+            <li><a href="#impacto">Impacto</a></li>
+            <li><a href="#ley">Ley Chilena</a></li>
+            <li><a href="#mitos">Mitos</a></li>
+        </ul>
+        <a href="#entidades" class="btn-pink">Ayuda 🇨🇱</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="floating-shape" style="top: 10%; left: 5%;">🌸</div>
+        <div class="floating-shape" style="bottom: 15%; right: 10%; animation-delay: 1s;">✨</div>
+        <div class="hero-content">
+            <h1>Donar órganos es sembrar vida cuando la nuestra se apaga 💖</h1>
+            <p>En Chile, miles de familias esperan un milagro. Infórmate, pierde el miedo y conversa hoy con tu familia.</p>
+            <br>
+            <a href="#muerte-encefalica" class="btn-pink">¿Qué es realmente? 👇</a>
+        </div>
+    </section>
+
+    <!-- Muerte Encefálica (Información detallada + Estilo Sticker) -->
+    <section id="muerte-encefalica" style="background-color: var(--bg-pink); border-radius: 50px 50px 0 0;">
+        <div class="section-title">
+            <h2>¿Qué es la Muerte Encefálica? 🧠</h2>
+            <p>Es fundamental entender esto para confiar en el proceso.</p>
+        </div>
+
+        <div class="brain-grid">
+            <!-- Tarjeta 1: Definición -->
+            <div class="sticker-card">
+                <div class="sticker-icon-top"><i class="fas fa-skull-crossbones"></i></div>
+                <h3>Es una Muerte Real</h3>
+                <p>La muerte encefálica es el cese <strong>total e irreversible</strong> de toda actividad del cerebro. Aunque el corazón siga latiendo por las máquinas, la persona ya ha fallecido legal y científicamente.</p>
+            </div>
+
+            <!-- Tarjeta 2: Certificación -->
+            <div class="sticker-card">
+                <div class="sticker-icon-top"><i class="fas fa-user-md"></i></div>
+                <h3>Doble Certificación</h3>
+                <p>En Chile 🇨🇱, la ley exige que <strong>dos médicos</strong> (uno de ellos neurólogo o neurocirujano) certifiquen la muerte mediante pruebas estrictas. ¡Es un proceso muy seguro!</p>
+            </div>
+        </div>
+
+        <!-- Comparación Visual -->
+        <div class="comparison-box">
+            <h3 style="text-align: center; margin-bottom: 1.5rem;">⚠️ No confundir con el Coma</h3>
+            
+            <div class="brain-grid">
+                <div class="comparison-item comp-coma">
+                    <h4><i class="fas fa-bed"></i> Estado de Coma</h4>
+                    <p>Hay actividad cerebral. Existe esperanza de despertar. El cerebro sigue "vivo".<br><strong>🚫 AQUÍ NO SE DONA.</strong></p>
+                </div>
+                
+                <div class="comparison-item comp-death">
+                    <h4><i class="fas fa-cross"></i> Muerte Encefálica</h4>
+                    <p>No hay flujo de sangre al cerebro. Es irreversible. Es el fin de la vida.<br><strong>✅ SOLO AQUÍ SE PUEDE DONAR.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impacto y Estadísticas -->
+    <section id="impacto">
+        <div class="section-title">
+            <h2>El Poder de Donar ✨</h2>
+            <p>Una decisión que multiplica la vida.</p>
+        </div>
+
+        <div class="impact-grid">
+            <div>
+                <div class="big-number">1 = 8</div>
+                <p>Un donante puede salvar hasta 8 vidas con sus órganos.</p>
+            </div>
+            <div>
+                <div class="big-number">2.000+</div>
+                <p>Personas en lista de espera hoy en Chile.</p>
+            </div>
+            <div>
+                <div class="big-number">+50</div>
+                <p>Personas mejoran su calidad de vida gracias a los tejidos.</p>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 4rem; margin-bottom: 2rem;">
+            <h3>¿Qué puedes regalar? 🎁</h3>
+        </div>
+
+        <div class="organ-gallery">
+            <div class="mini-sticker"><i class="fas fa-heart"></i> Corazón</div>
+            <div class="mini-sticker"><i class="fas fa-lungs"></i> Pulmones</div>
+            <div class="mini-sticker"><i class="fas fa-bacteria"></i> Riñones</div>
+            <div class="mini-sticker"><i class="fas fa-wine-bottle"></i> Hígado</div>
+            <div class="mini-sticker"><i class="fas fa-eye"></i> Córneas</div>
+            <div class="mini-sticker"><i class="fas fa-bone"></i> Huesos</div>
+            <div class="mini-sticker"><i class="fas fa-child"></i> Piel</div>
+        </div>
+    </section>
+
+    <!-- Ley Chilena -->
+    <section id="ley" style="background: linear-gradient(to right, #fff0f5, #fff);">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="sticker-card" style="border-style: dashed;">
+                <i class="fas fa-balance-scale" style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;"></i>
+                <h2>📜 Ley 19.451: Donante Universal</h2>
+                <p style="margin: 1.5rem 0; font-size: 1.1rem;">
+                    En Chile, todos somos donantes a partir de los 18 años, a menos que hayamos ido a una notaría a decir que NO.
+                </p>
+                <div style="background: var(--primary); color: white; padding: 1.5rem; border-radius: 15px; margin-top: 1rem;">
+                    <h3 style="color: white; margin-bottom: 0.5rem;">¡Pero Ojo! 👀</h3>
+                    <p>Aunque la ley lo diga, los médicos <strong>siempre preguntan a la familia</strong>. Si tu familia dice "no", no se donan los órganos.</p>
+                    <p style="margin-top: 10px; font-weight: bold; font-size: 1.2rem;">💖 ¡Cuéntales tu deseo hoy mismo! 💖</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mitos -->
+    <section id="mitos">
+        <div class="section-title">
+            <h2>Mitos vs Realidad 🦄</h2>
+            <p>Derribemos los miedos juntos.</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <!-- Mito 1 -->
+            <div class="myth-item">
+                <div class="myth-header">
+                    <span>🤔 "Si saben que soy donante, no me salvarán."</span>
+                    <i class="fas fa-plus" style="color: var(--primary);"></i>
+                </div>
+                <div class="myth-content">
+                    <p><strong>¡FALSO! 🚫</strong> El equipo de urgencias lucha por tu vida hasta el final. El equipo de trasplantes es distinto y solo aparece cuando ya has fallecido (muerte encefálica).</p>
+                </div>
+            </div>
+
+            <!-- Mito 2 -->
+            <div class="myth-item">
+                <div class="myth-header">
+                    <span>🤔 "Hay tráfico de órganos en Chile."</span>
+                    <i class="fas fa-plus" style="color: var(--primary);"></i>
+                </div>
+                <div class="myth-content">
+                    <p><strong>IMPOSIBLE 🔒</strong> Un trasplante requiere infraestructura compleja y cientos de profesionales. En Chile, todo está regulado por el ISP y el Minsal. La lista es nacional y transparente.</p>
+                </div>
+            </div>
+
+            <!-- Mito 3 -->
+            <div class="myth-item">
+                <div class="myth-header">
+                    <span>🤔 "Soy muy viejo para donar."</span>
+                    <i class="fas fa-plus" style="color: var(--primary);"></i>
+                </div>
+                <div class="myth-content">
+                    <p><strong>¡NO IMPORTA LA EDAD! 👵👴</strong> Lo que importa es el estado de salud de tus órganos. Personas de 70 u 80 años han salvado vidas donando hígado o córneas.</p>
+                </div>
+            </div>
+            
+            <!-- Mito 4 -->
+            <div class="myth-item">
+                <div class="myth-header">
+                    <span>🤔 "Mi religión no lo permite."</span>
+                    <i class="fas fa-plus" style="color: var(--primary);"></i>
+                </div>
+                <div class="myth-content">
+                    <p><strong>FALSO ✨</strong> La mayoría de las religiones (Católica, Evangélica, Judía, etc.) ven la donación como el acto supremo de amor al prójimo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entidades -->
+    <section id="entidades" style="background-color: var(--bg-pink);">
+        <div class="section-title">
+            <h2>Entidades Oficiales 🇨🇱</h2>
+            <p>Fuentes confiables donde informarte.</p>
+        </div>
+
+        <div class="entity-container">
+            <div class="entity-box">
+                <i class="fas fa-hospital-user" style="font-size: 3rem; color: var(--primary); margin-bottom: 10px;"></i>
+                <h4>MINSAL</h4>
+                <p>Coordinación Nacional de Procuramiento y Trasplante.</p>
+                <a href="https://yodonovida.minsal.cl/" target="_blank" class="btn-pink" style="margin-top: 10px; display: inline-block;">Ver Web</a>
+            </div>
+
+            <div class="entity-box">
+                <i class="fab fa-instagram" style="font-size: 3rem; color: #E1306C; margin-bottom: 10px;"></i>
+                <h4>@yodonovida.cl</h4>
+                <p>Campaña oficial del gobierno de Chile. ¡Síguelos!</p>
+                <a href="https://www.instagram.com/ministeriosalud/?hl=es/" target="_blank" class="btn-pink" style="margin-top: 10px; display: inline-block; background-color: #E1306C;">Instagram</a>
+            </div>
+
+            <div class="entity-box">
+                <i class="fas fa-hand-holding-heart" style="font-size: 3rem; color: var(--primary); margin-bottom: 10px;"></i>
+                <h4>Sociedad chilena del transplante</h4>
+                <p>Sociedad chilena del transplante.p>
+                <a href="http://www.sociedaddetrasplante.cl/portal/" target="_blank" class="btn-pink" style="margin-top: 10px; display: inline-block;">Ver Web</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2 style="color: white;">Yo Dono Vida 💖</h2>
+        <p>Conversa con tu familia. Ese es el paso más importante.</p>
+        <div style="margin-top: 2rem; font-size: 1.5rem;">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fas fa-heart"></i>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 2rem; opacity: 0.8;">Información basada en normativa del Minsal Chile.</p>
+    </footer>
+
+    <script>
+        // Lógica del acordeón
+        const items = document.querySelectorAll('.myth-header');
+        
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                const content = item.nextElementSibling;
+                const icon = item.querySelector('i');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    // Cierra los otros si quieres (opcional)
+                    /* 
+                    document.querySelectorAll('.myth-content').forEach(c => c.style.maxHeight = null);
+                    document.querySelectorAll('.myth-header i').forEach(i => {
+                        i.classList.remove('fa-minus');
+                        i.classList.add('fa-plus');
+                    }); 
+                    */
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
